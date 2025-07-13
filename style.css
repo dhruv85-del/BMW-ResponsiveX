@@ -1,0 +1,870 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(120deg, #e3eafc 0%, #f8fafd 100%);
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 32px rgba(23, 82, 211, 0.07);
+    border-radius: 18px;
+    padding: 10px 20px;
+    margin-top: 24px;
+    transition: background 0.3s;
+}
+
+.logo {
+    color: #000000;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-shadow: 0 2px 16px #1752d3, 0 1px 1px #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+}
+
+.nav-links li a {
+    color: #020202;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links li a:hover {
+    color: #f4f4f4;
+    background-color: #1752d3;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links li a.active {
+    color: #f4f4f4;
+    background-color: #1752d3;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links li a.active:hover {
+    color: #f4f4f4;
+    background-color: #1752d3;
+}
+
+.nav-links li a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #1752d3;
+}
+
+.nav-links li a:focus:hover {
+    color: #f4f4f4;
+    background-color: #1752d3;
+}
+
+.nav-links li a:focus.active {
+    color: #f4f4f4;
+    background-color: #1752d3;
+}
+
+.nav-links li a:focus.active:hover {
+    color: #f4f4f4;
+    background-color: #1752d3;
+}
+
+.nav-links li a:focus:not(.active) {
+    color: #f4f4f4;
+    background-color: #1752d3;
+}
+
+.nav-links li a:focus:not(.active):hover {
+    color: #f4f4f4;
+    background-color: #1752d3;
+}
+
+.nav-links li a:focus:not(.active):active {
+    color: #f4f4f4;
+    background-color: #1752d3;
+}
+
+.nav-links li a:focus:not(.active):active:hover {
+    color: #f4f4f4;
+    background-color: #1752d3;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 5rem 6rem;
+    margin: 1rem auto;
+    max-width: 2100px;
+    gap: 2rem;
+}
+
+.main-text {
+    flex: 1;
+}
+
+.main-text h2 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.main-text p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+
+.explore-button {
+    background: linear-gradient(90deg, #1752d3 0%, #0072c6 100%);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 16px rgba(23, 82, 211, 0.10);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.explore-button:hover {
+    background: linear-gradient(90deg, #0072c6 0%, #1752d3 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(23, 82, 211, 0.18);
+}
+
+.main-video-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    float: right;
+}
+
+.main-video-container video {
+    max-width: 900px;
+    float: right;
+    height: auto;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+
+
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1300px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.video-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-grid video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+    background: #000;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-grid video.video-large {
+    height: 350px;
+}
+
+.video-caption {
+    margin-top: 0.7rem;
+    font-size: 1.05rem;
+    color: #222;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.video-grid video:hover {
+    transform: scale(2.1) rotate(1deg);
+    box-shadow: 0 8px 32px rgba(23, 82, 211, 0.13);
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-container {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .main-video-container {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .main-video-container video {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .main-text h2 {
+        font-size: 2rem;
+    }
+
+    .main-text p {
+        font-size: 1rem;
+    }
+
+    .explore-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+.side-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 3rem;
+    margin: 2rem auto;
+    max-width: 1100px;
+    gap: 2.5rem;
+}
+
+.side-video {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.side-video video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+    background: #000;
+    object-fit: cover;
+}
+
+.side-content {
+    flex: 1;
+    padding-left: 2rem;
+}
+
+.side-content h2 {
+    font-size: 3rem;
+    color: #53565e;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.side-content p {
+    font-size: 1.15rem;
+    color: #222;
+    line-height: 1.7;
+}
+
+.custom-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafd;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 3rem;
+    margin: 2.5rem auto;
+    max-width: 1200px;
+    gap: 2.5rem;
+}
+
+.custom-left {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.custom-left h2 {
+    font-size: 2rem;
+    color: #1752d3;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.custom-left p {
+    font-size: 1.15rem;
+    color: #222;
+    line-height: 1.7;
+}
+
+.custom-right {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.custom-right video {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+    background: #000;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.custom-images {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.custom-images img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: #eee;
+}
+
+.media-grid-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 3rem;
+    margin: 2.5rem auto;
+    max-width: 1200px;
+    gap: 2.5rem;
+}
+
+.media-grid-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.media-grid-text h2 {
+    font-size: 2rem;
+    color: #1752d3;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.media-grid-text p {
+    font-size: 1.15rem;
+    color: #222;
+    line-height: 1.7;
+}
+
+.media-grid {
+    flex: 1.2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.2rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.media-grid video {
+    width: 100%;
+    max-width: 220px;
+    height: 140px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+    background: #000;
+    object-fit: cover;
+}
+
+.media-grid img {
+    width: 100%;
+    max-width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: #eee;
+}
+
+.media-grid-caption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #222;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.media-grid-caption img {
+    width: 100%;
+    max-width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background: #eee;
+}
+
+.media-grid-caption video {
+    width: 100%;
+    max-width: 220px;
+    height: 140px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+    background: #000;
+    object-fit: cover;
+}
+
+.media-grid-caption h3 {
+    font-size: 1.05rem;
+    color: #222;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+}
+
+.media-grid-caption p {
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    margin-top: 0.2rem;
+}
+
+.media-grid-caption a {
+    color: #1752d3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.media-grid-caption a:hover {
+    color: #003f7f;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 3rem auto 2rem auto;
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+    background: #fff;
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    transition: opacity 0.7s, transform 0.5s;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.carousel-image.active {
+    display: block;
+    animation: carouselFade 0.7s;
+}
+
+@keyframes carouselFade {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(23, 82, 211, 0.7);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.2s;
+    outline: none;
+}
+
+.carousel-btn.prev {
+    left: 18px;
+}
+
+.carousel-btn.next {
+    right: 18px;
+}
+
+.carousel-btn:hover {
+    background: #1752d3;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dot {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #bbb;
+    display: inline-block;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 2px solid #fff;
+}
+
+.dot.active {
+    background: #1752d3;
+    border-color: #1752d3;
+    animation: dotPulse 1s infinite alternate;
+}
+
+@keyframes dotPulse {
+    from {
+        box-shadow: 0 0 0 0 #1752d3;
+    }
+
+    to {
+        box-shadow: 0 0 0 6px rgba(23, 82, 211, 0.15);
+    }
+}
+
+.bmw-models-heading {
+    text-align: center;
+    margin: 3rem auto 2rem auto;
+    max-width: 800px;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(90deg, #e3eafc 0%, #f8fafd 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(23, 82, 211, 0.07);
+}
+
+.bmw-models-heading h2 {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 2.7rem;
+    color: #2a302f;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(23, 82, 211, 0.08);
+}
+
+.bmw-models-heading p {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+/* Add to your style.css for responsive navbar and hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: 1rem;
+    z-index: 1001;
+}
+
+.hamburger span {
+    height: 4px;
+    width: 28px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+
+.hamburger.is-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 10px;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #1a1a1a;
+        flex-direction: column;
+        width: 200px;
+        align-items: flex-start;
+        padding: 1rem 0;
+        gap: 0;
+        display: none;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        z-index: 1000;
+        border-radius: 0 0 12px 12px;
+    }
+    .nav-links.nav-active {
+        display: flex;
+    }
+    .nav-links li {
+        width: 100%;
+        padding: 0.5rem 1.5rem;
+    }
+    .nav-links li a {
+        width: 100%;
+        display: block;
+        padding: 0.7rem 0;
+        color: #fff;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .main-container,
+    .side-container,
+    .custom-container,
+    .media-grid-container {
+        padding: 1.2rem 0.5rem;
+        border-radius: 10px;
+    }
+
+    .carousel-container {
+        max-width: 98vw;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .main-text h2,
+    .side-content h2,
+    .custom-left h2,
+    .media-grid-text h2,
+    .bmw-models-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-image {
+        height: 180px;
+    }
+}
+
+.bmw-footer {
+    background: #181c20;
+    color: #f4f4f4;
+    padding: 2.5rem 0 1.2rem 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin-top: 3rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 1.5rem auto;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #2a2e33;
+    padding-bottom: 1.2rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #c9a9a9;
+}
+
+.footer-logo img {
+    width: 48px;
+    height: auto;
+    filter: brightness(1.2);
+}
+
+.footer-logo i {
+    font-style: italic;
+    color: #0072c6;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.2s;
+    opacity: 0.85;
+}
+
+.footer-links a:hover {
+    color: #0072c6;
+    opacity: 1;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    font-size: 0.98rem;
+    padding-top: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-social a img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(1.5);
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.footer-social a:hover img {
+    filter: none;
+    transform: scale(1.1);
+}
+
+.footer-copy {
+    color: #b0b4b8;
+    opacity: 0.8;
+}
+
+.footer-copy a {
+    color: #b0b4b8;
+    text-decoration: underline;
+    margin-left: 0.5rem;
+    transition: color 0.2s;
+}
+
+.footer-copy a:hover {
+    color: #0072c6;
+}
+
+@media (max-width: 900px) {
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+    }
+
+    .footer-social {
+        margin-bottom: 0.7rem;
+    }
+}

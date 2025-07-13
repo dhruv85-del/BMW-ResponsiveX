@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+
+            <img src="logos/logo-bmw-com-gray.svg" alt="" style="width: 60px; height: auto;">
+            <span class="logo-text">Sheer Driving <i>Pleasure</i></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Circular World</a></li>
+            <li><a href="#">Digital Journey</a></li>
+            <li><a href="#">Electric Future</a></li>
+            <li><a href="#">Freude</a></li>
+            <li><a href="#">Models</a></li>
+            <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg></a></li>
+
+
+        </ul>
+    </nav>
+    <div class="main-container">
+        <div class="main-text">
+            <h2>Experience the Future of Driving</h2>
+            <p>BMW combines luxury, performance, and innovation to deliver an unparalleled driving experience. Discover
+                our latest advancements in electric mobility, digital technology, and sustainable design.</p>
+            <button class="explore-button">Learn More</button>
+        </div>
+        <div class="main-video-container">
+            <video src="video/video1.mp4" autoplay muted loop playsinline></video>
+        </div>
+    </div>
+
+    <div class="video-grid">
+        <div class="video-item">
+            <video class="video-large" src="video/video5.mp4" autoplay loop muted playsinline></video>
+            <div class="video-caption">BMW iX: The Future of Electric Mobility</div>
+        </div>
+        <div class="video-item">
+            <video src="video/video3.mp4" autoplay loop muted playsinline></video>
+            <div class="video-caption">BMW M4: Pure Performance</div>
+        </div>
+        <div class="video-item">
+            <video src="video/video4.mp4" autoplay loop muted playsinline></video>
+            <div class="video-caption">BMW X5: Luxury Meets Adventure</div>
+        </div>
+        <div class="video-item">
+            <video src="video/video2.mp4" autoplay loop muted playsinline></video>
+            <div class="video-caption">BMW Vision: Innovation in Motion</div>
+        </div>
+    </div>
+    <div class="side-container">
+        <div class="side-video">
+            <video src="video/video7.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <div class="side-content">
+            <h2> BECOME A BMW EXPERT
+                BMW EXPLAINED</h2>
+            <p>
+                Discover the latest innovations and technologies that make BMW a leader in the automotive industry. From
+                electric vehicles to advanced driver assistance systems, learn how BMW is shaping the future of
+                mobility.
+            </p>
+        </div>
+    </div>
+    <div class="media-grid-container">
+        <div class="media-grid-text">
+            <h2>BMW Experience Gallery</h2>
+            <p>
+                Dive into the BMW world with our exclusive gallery. Watch our latest showcase video and explore stunning images that capture the essence of BMW's design and innovation.
+            </p>
+        
+        </div>
+        <div class="media-grid">
+            <video src="video/video8.mp4" autoplay loop muted playsinline></video>
+            <img src="pictures/cover_season_stage_hd_d_1920_1080.jpg" alt="BMW Gallery 1">
+            <video src="video/video6.mp4" autoplay loop muted playsinline></video>
+        </div>
+    </div>
+    <!-- Add this before the carousel container -->
+<div class="bmw-models-heading">
+    <h2>Explore BMW Models</h2>
+    <p>
+        Discover the full range of BMW vehicles, where luxury meets performance. From dynamic sedans to powerful SUVs and innovative electric models, BMW offers the perfect driving experience for every enthusiast.
+    </p>
+</div>
+<!-- Add this carousel container where you want the carousel to appear -->
+<div class="carousel-container">
+    <div class="carousel">
+        <img src="pictures/pic1.jpeg" alt="BMW 1" class="carousel-image active">
+        <img src="pictures/pic2.jpeg" alt="BMW 2" class="carousel-image">
+        <img src="pictures/pic3.jpeg" alt="BMW 3" class="carousel-image">
+        <img src="pictures/pic4.jpeg" alt="BMW 4" class="carousel-image">
+        <img src="pictures/pic5.jpeg" alt="BMW 5" class="carousel-image">
+        <img src="pictures/pic6.jpeg" alt="BMW 6" class="carousel-image">
+        <img src="pictures/pic7.jpeg" alt="BMW 7" class="carousel-image">
+        <img src="pictures/pic8.jpeg" alt="BMW 8" class="carousel-image">
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+        <div class="carousel-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+</div>
+
+<!-- Carousel JS -->
+<script>
+    const images = document.querySelectorAll('.carousel-image');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let current = 0;
+
+    function showSlide(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+            dots[i].classList.toggle('active', i === index);
+        });
+        current = index;
+    }
+
+    prevBtn.onclick = () => showSlide((current - 1 + images.length) % images.length);
+    nextBtn.onclick = () => showSlide((current + 1) % images.length);
+    dots.forEach((dot, i) => dot.onclick = () => showSlide(i));
+</script>
+<script>
+// Responsive Navbar Toggle (for mobile)
+document.addEventListener('DOMContentLoaded', function () {
+    const nav = document.querySelector('.navbar');
+    const navLinks = document.querySelector('.nav-links');
+    // Create hamburger menu
+    const hamburger = document.createElement('div');
+    hamburger.className = 'hamburger';
+    hamburger.innerHTML = '<span></span><span></span><span></span>';
+    nav.appendChild(hamburger);
+
+    hamburger.onclick = function () {
+        navLinks.classList.toggle('nav-active');
+        hamburger.classList.toggle('is-active');
+    };
+});
+
+// Responsive Carousel (already works, but add swipe for mobile)
+(function() {
+    let startX = 0;
+    let endX = 0;
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+    carousel.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+    });
+    carousel.addEventListener('touchmove', function(e) {
+        endX = e.touches[0].clientX;
+    });
+    carousel.addEventListener('touchend', function() {
+        if (startX - endX > 50) {
+            document.querySelector('.carousel-btn.next').click();
+        } else if (endX - startX > 50) {
+            document.querySelector('.carousel-btn.prev').click();
+        }
+    });
+})();
+</script>
+<footer class="bmw-footer">
+    <div class="footer-top">
+        <div class="footer-logo">
+            <img src="logos/logo-bmw-com-gray.svg" alt="BMW Logo">
+            <span>Sheer Driving <i>Pleasure</i></span>
+        </div>
+        <div class="footer-links">
+            <a href="#">Models</a>
+            <a href="#">Configurator</a>
+            <a href="#">Offers</a>
+            <a href="#">BMW World</a>
+            <a href="#">Contact</a>
+            <a href="#">Careers</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-social">
+            <a href="#" aria-label="BMW Facebook"><img src="logos/facebook.jpeg" alt="Facebook"></a>
+            <a href="#" aria-label="BMW Instagram"><img src="logos/insta.jpeg" alt="Instagram"></a>
+            <a href="#" aria-label="BMW Twitter"><img src="logos/twitter.png" alt="Twitter"></a>
+            <a href="#" aria-label="BMW YouTube"><img src="logos/youtube.png" alt="YouTube"></a>
+        </div>
+        <div class="footer-copy">
+            &copy; 2025 BMW AG. All rights reserved. | <a href="#">Legal Notice</a> | <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
