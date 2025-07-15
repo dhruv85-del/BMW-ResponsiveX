@@ -648,19 +648,22 @@ body {
     max-width: 650px;
 }
 
-/* Add to your style.css for responsive navbar and hamburger */
+/* Add or update in your style.css for full mobile responsiveness and navbar behavior */
+
+/* Responsive Navbar & Hamburger */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    margin-left: 1rem;
+    margin-left: auto;
+    margin-top: 5px;
     z-index: 1001;
 }
 
 .hamburger span {
     height: 4px;
     width: 28px;
-    background: #fff;
+    background: #1752d3;
     margin: 4px 0;
     border-radius: 2px;
     display: block;
@@ -684,10 +687,13 @@ body {
         flex-direction: column;
         align-items: flex-start;
         padding: 10px 10px;
+        position: relative;
     }
+
     .logo {
         margin-bottom: 10px;
     }
+
     .nav-links {
         position: absolute;
         top: 70px;
@@ -699,17 +705,20 @@ body {
         padding: 1rem 0;
         gap: 0;
         display: none;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
         z-index: 1000;
         border-radius: 0 0 12px 12px;
     }
+
     .nav-links.nav-active {
         display: flex;
     }
+
     .nav-links li {
         width: 100%;
         padding: 0.5rem 1.5rem;
     }
+
     .nav-links li a {
         width: 100%;
         display: block;
@@ -720,13 +729,47 @@ body {
     .hamburger {
         display: flex;
     }
+}
 
+/* Responsive main container and grids */
+@media (max-width: 900px) {
     .main-container,
     .side-container,
     .custom-container,
     .media-grid-container {
+        flex-direction: column;
         padding: 1.2rem 0.5rem;
         border-radius: 10px;
+        gap: 1.5rem;
+    }
+
+    .main-video-container,
+    .side-video,
+    .custom-right,
+    .media-grid {
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .main-video-container video,
+    .side-video video,
+    .custom-right video,
+    .media-grid video {
+        max-width: 100vw;
+        width: 100%;
+        height: auto;
+    }
+
+    .media-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .media-grid img {
+        max-width: 100vw;
+        width: 100%;
+        height: auto;
     }
 
     .carousel-container {
@@ -734,18 +777,33 @@ body {
     }
 }
 
+/* Extra small screens */
 @media (max-width: 600px) {
-
     .main-text h2,
     .side-content h2,
     .custom-left h2,
     .media-grid-text h2,
     .bmw-models-heading h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .carousel-image {
-        height: 180px;
+        height: 160px;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.2rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+    }
+
+    .footer-social {
+        margin-bottom: 0.7rem;
     }
 }
 
